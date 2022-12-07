@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load  static  %}
+{% comment %} 格柵問題弄 {% endcomment %}
+{% block content %} 
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+<form action=""   enctype="multipart/form-data" method="post">
+  {% csrf_token %}
+  <h1 class="h3 mb-3 fw-normal">新增相片</h1>
+  {% comment %} <div class="input-group">
+      <span class="input-group-text">照片說明</span>
+      <input type="text" class="form-control" aria-label="With textarea" name="pdesc"></input>
+  </div>
+  <div class="input-group">
+      <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload" name="photo">
+  </div> {% endcomment %}
+
+  {% for i in photoform %}
+   {{i}}
+  {% endfor%}
+
+  <div >
+    <label for="ps">請輸入密碼用於驗證:</label><input  placeholder="用戶密碼" id= "ps"type="password" class="form-control" aria-describedby="inputGroupFileAddon04"  name="mypassword">
+    
+  </div> 
+  
+  
+  
+  <button class="btn btn-outline-secondary" type="submit" id="inputGroupFileAddon04">上傳</button>
+   
+</form>
+
+
+
+
+{% endblock  %}
+
+
+{% comment %}  格柵的問題要處理一下 {% endcomment %}

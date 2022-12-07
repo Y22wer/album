@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="generator" content="Hugo 0.88.1">
+    <title> 網路相簿登入頁面 </title>
+    
+
+    <!-- Bootstrap core CSS -->
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="/static/css/signin.css" rel="stylesheet">
+  </head>
+  <body class="text-center">
+    
+<main class="form-signin">
+  
+  
+  <form action=""    method="post"  >
+    {% csrf_token %}
+    {% comment %} <img class="mb-4" src="../assets/brand/bootstrap-logo.svg" alt="42行照片" width="72" height="57"> {% endcomment %}
+    <h1 class="h3 mb-3 fw-normal">會員登入</h1>
+    <div class="form-floating">
+      <input name="usermail" type="email" class="form-control" id="floatingInput" placeholder="name@example.com" value={{user_mail}}></input>
+      <label for="floatingInput">用戶信箱</label>
+    </div>
+    <div class="form-floating">
+      <input name="password" type="password" class="form-control" id="floatingPassword" placeholder="Password"></input>
+      <label for="floatingPassword">密碼</label>
+    </div>
+    <span style="color:red; ">  {{usererror}}  </span>
+    <div class="checkbox mb-3">
+      <label>
+        <input type="checkbox" value="remember-me"> Remember me
+      </label>
+    </div>
+   <button class="w-100 btn btn-lg btn-primary" type="submit">登入</button>
+  </form> 
+
+
+  <p></p>
+  <a href= "/register">註冊</a> </button>
+  <p></p>
+
+  <a href="/" class="btn btn-outline-secondary" >忘記密碼</a>
+  <a href="/" class="btn btn-outline-secondary" >回首頁</a>
+  <p class="mt-5 mb-3 text-muted">&copy; 文末</p>
+</main>
+
+    
+  </body>
+</html>

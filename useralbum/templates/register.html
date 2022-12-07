@@ -1,0 +1,71 @@
+
+{% load  static  %}
+
+<!doctype html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="generator" content="Hugo 0.88.1">
+    <title> 網路相簿註冊 </title>
+    
+
+    <!-- Bootstrap core CSS -->
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/css/signin.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>    
+  </head>
+  
+  <body class="text-center">
+    
+    
+      
+    
+
+      <main class="form-signin">
+
+          <form action=""    method="post"  novalidate>
+            {% comment %} <img class="mb-4" src="../assets/brand/bootstrap-logo.svg" alt="42行照片" width="72" height="57"> {% endcomment %}
+            <h1 class="h3 mb-3 fw-normal">會員註冊</h1>
+            {% csrf_token %}
+          
+            {% for field in userform %}
+          
+            <div class="form-floating">
+              {{field}}
+              <label for="floatingInput"> {{ field.label }} </label>
+              <span style="color:red; ">{{ field.errors}}  </span>
+              
+            </div>
+          
+            {% endfor %}
+            <p><span style="color:red; "> {{error}} </span></p>
+              <button class="btn btn-outline-secondary" type="submit" id="inputGroupFileAddon04">註冊帳戶</button>
+           
+          </form>
+
+          <p></p>
+         <a href="/" class="btn btn-outline-secondary" >會員登入</a>
+          
+         <a href="/" class="btn btn-outline-secondary" >回首頁</a>
+      </main>
+
+    
+  </body>
+</html>

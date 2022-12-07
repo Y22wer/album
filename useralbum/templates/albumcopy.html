@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load  static  %}
+
+
+{% block section %} 
+<section class="py-5 text-center container">
+  <div class="row py-lg-5">
+    <div class="col-lg-6 col-md-8 mx-auto">
+      <h1 class="fw-light">Django Demo</h1>
+      <p class="lead text-muted">在此留下美麗的蹤跡...</p>
+      <p>
+        <a href="#" class="btn btn-primary my-2">الدعوة الرئيسية للعمل</a>
+        <a href="#" class="btn btn-secondary my-2">訪客留言</a>
+      </p>
+    </div>
+  </div>
+</section>
+{% endblock  %}
+
+
+
+
+{% block content %} 
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        {% for photo in photos%}
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src=../{{ photo.photo}} with="100%" heigh="400" alt="照片們">
+            <div class="card-body">
+              <p class="card-text"> {{ photo.desc }}</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href=../{{ photo.photo}} class="btn btn-sm btn-outline-secondary" target=blank >查看</a>
+                  <a href="{% url 'update' photo.id %}"{{photo.id}}  class="btn btn-sm btn-outline-secondary">編輯</a>
+                  <a class="btn btn-sm btn-outline-secondary" href="{% url 'del' photo.id %}"{{photo.id}}> 刪除</a>
+
+                  
+                </div>
+                <small class="text-muted">{{ photo.upload_time }}</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+{% endblock  %}

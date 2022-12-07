@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="generator" content="Hugo 0.88.1">
+    <title> 網路相簿註冊 </title>
+    
+
+    <!-- Bootstrap core CSS -->
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="/static/css/signin.css" rel="stylesheet">
+  </head>
+  <body class="text-center">
+    
+<main class="form-signin">
+  <form>
+    <img class="mb-4" src="../assets/brand/bootstrap-logo.svg" alt="42行照片" width="72" height="57">
+    <h1 class="h3 mb-3 fw-normal">註冊系統</h1>
+
+
+{% comment %} 這個CSS 把 type  type="password" 和 type="email 會抓在一起弄 {% endcomment %}
+ {% csrf_token %}
+ {% comment %} <input type="text" name="username" maxlength="20" required="" id="id_username"> {% endcomment %}
+
+{% comment %} 如果要套 BT 留意 class  id    placeholder  {% endcomment %}
+    <div class="form-floating">
+      <input nqme="user" type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+      <label for="floatingInput">Email address</label>
+    </div>
+    <div class="form-floating">
+      <input nqme="password" type="text" class="form-control" id="floatingPassword" placeholder="Password">
+      <label for="floatingPassword">Password</label>
+    </div>
+    <div class="form-floating">
+        <input nqme="password" type="text" class="form-control"  id="rd" placeholder="Pppppp">
+        <label for="rd">PPPPP</label>
+    </div>
+
+  
+
+
+    <button class="w-100 btn btn-lg btn-primary" type="submit">註冊</button>
+
+  </form>
+  
+</main>
+
+    
+  </body>
+</html>

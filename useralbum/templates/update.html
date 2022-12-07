@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load  static  %}
+{% comment %} 格柵問題 {% endcomment %}
+
+{% block content %} 
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+<form action=""   enctype="multipart/form-data" method="post">
+  {% csrf_token %}
+    <div class="col">
+      <div class="card shadow-sm">
+        <img width="100%" heigh="400" alt="照片們" src={{url}}  >
+      </div>
+    </div>
+    <div class="input-group">
+        <span class="input-group-text">照片說明</span>
+        <input type="text" class="form-control" aria-label="With textarea" name="updatedesc" value= {{photo.desc}} ></input>
+    </div>
+    <button class="btn btn-outline-secondary" type="submit" id="inputGroupFileAddon04">保存</button>
+</form>
+{% endblock  %}
